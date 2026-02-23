@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Happy 8th Anniversary My Love ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f0f14;
+    --card: #1b1b23;
+    --accent: #ff6b9a;
+    --accent-2: #ffd166;
+    --text: #f7f7fb;
+    --subtext: #cfd3e4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: radial-gradient(1200px 600px at 70% -10%, #1a1a24 30%, #0f0f14),
+    url('https://images.unsplash.com/photo-1511735111819-9a3f7709049c?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat fixed;
+    color: var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  }
+  header {
+    position: relative; padding: 72px 24px 32px; text-align: center;
+    background: linear-gradient(180deg, rgba(15,15,20,0.85), rgba(15,15,20,0.6) 60%, transparent);
+  }
+  .title {
+    font-family: "Playfair Display", serif; font-size: clamp(1.8rem, 3.5vw, 3.2rem);
+    margin: 0; line-height: 1.15; letter-spacing: 0.4px;
+  }
+  .subtitle { margin: 12px auto 0; color: var(--subtext); max-width: 800px; font-size: 1rem; }
+  .date-chip {
+    display: inline-block; margin-top: 14px; padding: 6px 12px; border-radius: 999px;
+    background: rgba(255, 107, 154, 0.15); color: var(--accent); font-weight: 600; font-size: 0.9rem;
+    border: 1px solid rgba(255, 107, 154, 0.35);
+  }
+
+  .container { max-width: 1024px; margin: 0 auto; padding: 24px; }
+  .hero {
+    background: rgba(12,12,18,0.75); backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px; padding: 22px; display: grid; gap: 20px;
+  }
+  .hero-inner {
+    display: grid; gap: 18px; grid-template-columns: 1.2fr 1fr;
+  }
+  @media (max-width: 840px) { .hero-inner { grid-template-columns: 1fr; } }
+  .hero p { color: var(--subtext); margin: 0; }
+  .hero h2 {
+    margin: 0; font-family: "Playfair Display", serif; font-size: 1.6rem;
+  }
+  .btn {
+    display: inline-block; margin-top: 10px; padding: 12px 18px; border-radius: 12px;
+    background: linear-gradient(135deg, #ff6b9a, #ff8fab);
+    color: #1b0f14; font-weight: 700; border: none; cursor: pointer; transition: transform .08s ease;
+  }
+  .btn:active { transform: translateY(1px); }
+
+  /* Reasons Grid */
+  .grid {
+    display: grid; gap: 14px; margin-top: 18px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media (max-width: 920px) { .grid { grid-template-columns: repeat(2, 1fr);} }
+  @media (max-width: 520px) { .grid { grid-template-columns: 1fr; } }
+  .card {
+    background: linear-gradient(180deg, rgba(27,27,35,0.9), rgba(20,20,28,0.9));
+    border: 1px solid rgba(255,255,255,0.06); padding: 16px; border-radius: 14px;
+    position: relative; overflow: hidden; min-height: 120px;
+  }
+  .badge {
+    position: absolute; top: 10px; right: 10px; font-weight: 800; font-size: 0.9rem;
+    color: var(--accent-2); background: rgba(255,209,102,0.12); border: 1px solid rgba(255,209,102,0.35);
+    padding: 4px 10px; border-radius: 999px;
+  }
+  .card h3 { margin: 8px 0 6px; font-size: 1.05rem; }
+  .card p { margin: 0; color: var(--subtext); font-size: 0.95rem; }
+
+  /* Gallery */
+  .gallery {
+    margin-top: 24px; display: grid; gap: 10px; grid-template-columns: repeat(4, 1fr);
+  }
+  @media (max-width: 920px) { .gallery { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 520px) { .gallery { grid-template-columns: repeat(2, 1fr); } }
+  .gallery img {
+    width: 90%; height: 130px; object-fit: cover; border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.07); filter: saturate(1.05) contrast(1.02);
+  }
+
+  /* Footer note */
+  footer {
+    text-align: center; color: var(--subtext); font-size: 0.92rem;
+    padding: 28px 14px 60px;
+  }
+
+  /* Hearts */
+  .heart {
+    position: fixed; pointer-events: none; width: 16px; height: 16px;
+    background: radial-gradient(circle at 30% 30%, #fff6 5%, #ff8fb3 20%, #ff6b9a 60%, #ff3d7a 100%);
+    transform: rotate(45deg); opacity: 0.75; animation: floatUp linear forwards;
+  }
+  .heart::before, .heart::after {
+    content: ''; position: absolute; width: 16px; height: 16px; background: inherit; border-radius: 50%;
+  }
+  .heart::before { top: -8px; left: 0; }
+  .heart::after { left: -8px; top: 0; }
+  @keyframes floatUp {
+    to { transform: translateY(-120vh) rotate(45deg); opacity: 0; }
+  }
+
+  /* Confetti Canvas */
+  #confetti { position: fixed; inset: 0; pointer-events: none; }
+
+  /* Audio hint */
+  .audio-hint {
+    font-size: 0.82rem; color: var(--subtext); opacity: 0.9; margin-left: 8px;
+  }
+</style>
+</head>
+<body>
+<canvas id="confetti"></canvas>
+
+<header>
+  <h1 style="color: red", class="title">Happy 8th Anniversary <span id="name">My Love</span>! 💖</h1>
+  <p style= "color:pink" class="subtitle">
+    Eight years, countless memories, unforgettable moments, and a lifetime to go. Thank you for being my hubby
+    This is Best day in my Life...💞💕💓
+  </p>
+  <div class="date-chip">
+  <button class="btn btn-primary" onclick="alert(' I Love You Always and Forever 💞💕💓')">
+    Celebrating 8 magical years ✨
+</button>
+ </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <h2 style="color: Pink">8 Reasons I Love You</h2>
+        <p>Tap each card to reveal a reason. I could list a lot of memories, but here are eight that make my heart smile, every day.</p>
+        <button id="revealAll" class="btn">Reveal All 🎊</button>
+        <span class="audio-hint">Tip: Turn on sound </span>
+      </div>
+      <div>
+        <audio controls autoplay loop>
+          <source src="audio/song.mpeg" type="audio/mpeg"> 
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
+
+    <div class="grid" id="reasonsGrid">
+      <!-- Update the titles/texts to your own -->
+      <!-- Each .card has data-front (hidden text before click) -->
+      <div class="card" data-front="Tap to reveal">
+        <span class="badge">❤️</span>
+        <h3>Tap to reveal</h3>
+        <p class="reason" data-reason="The most beautiful chapter of my life written by God is when he sent you in my life...🤗      You are not just my husband, you are my best friend, my greatest support and the love of my life....❤️">•••</p>
+      </div>
+      <div class="card" data-front="Tap to reveal">
+        <span class="badge">❤️</span>
+        <h3>Tap to reveal</h3>
+        <p class="reason" data-reason="I respect your busy time But ❤️ Remember that I am waiting for you...!!!">•••</p>
+      </div>
+      <div class="card" data-front="Tap to reveal">
+        <span class="badge">❤️</span>
+        <h3>Tap to reveal</h3>
+        <p class="reason" data-reason="I'm So Lucky💞 to have a caring, loving, kind, sweet and beautiful person in my life and its You...❤️">•••</p>
+      </div>
+      <div class="card" data-front="Tap to reveal">
+        <span class="badge">❤️</span>
+        <h3>Tap to reveal</h3>
+        <p class="reason" data-reason="I Promise you I will never leave you at any Situation.. I will Care for you...I will I hold Your hands whatever the situation may Be. I will love you always... Tills my Last breath...!!❤️💑😘">•••</p>
+      </div>
+      <div class="card" data-front="Tap to reveal">
+        <span class="badge">❤️</span>
+        <h3>Tap to reveal</h3>
+        <p class="reason" data-reason="My Happiness: chating with You 🥰  My Smile: Thinking About You 🤗"  My Sadness: Missing You 😥  My Forever Love: "Only You" ❤️">•••</p>
+      </div>
+      <div class="card" data-front="Tap to reveal">
+        <span class="badge">❤️</span>
+        <h3>Tap to reveal</h3>
+        <p class="reason" data-reason="I miss you so much, Pls be safe everyday Wherever you go..!! I Love You So Much...!!❤️">•••</p>
+      </div>
+      <div class="card" data-front="Tap to reveal">
+        <span class="badge">❤️</span>
+        <h3>Tap to reveal</h3>
+        <p class="reason" data-reason="Miss you a lot, come and Meet me..❣️ I am waiting for your Hug...💑👫🥰😗💖">•••</p>
+      </div>
+      <div class="card" data-front="Tap to reveal">
+        <span class="badge">❤️</span>
+        <h3>Tap to reveal</h3>
+        <p class="reason" data-reason="Home is not home without you. My Love, My charm, my strength.. My hardworking man. My forever partner and Be safe every day..!!  I Love You Forever..❤️">•••</p>
+      </div>
+    </div>
+
+    <div class="gallery">
+      <!-- Replace src with your own local images (same folder) or online URLs -->
+      <a href="anni/Memory1.jpg" target="_blank">
+      <img src="versa/Memory1.jpeg" alt="Our Memory 1">
+    </a>
+    <a href="anni/Memory2.jpg" target="_blank">
+      <img src="versa/Memory2.jpeg" alt="Our Memory 2">
+    </a>
+    <a href="anni/Memory3.jpg" target="_blank">
+      <img src="versa/Memory3.jpeg" alt="Our Memory 3">
+    </a>
+    <a href="anni/Memory4.jpg" target="_blank">
+      <img src="versa/Memory4.jpeg" alt="Our Memory 4">
+    </a>
+      <a href="anni/Memory5.jpg" target="_blank">
+      <img src="versa/Memory5.jpeg" alt="Our Memory 3">
+    </a>
+    <a href="anni/Memory6.jpg" target="_blank">
+      <img src="versa/Memory6.jpeg" alt="Our Memory 4">
+    </a>
+<a href="anni/Memory7.jpg" target="_blank">
+      <img src="versa/Memory7.jpeg" alt="Our Memory 1">
+    </a>
+    <a href="anni/Memory8.jpg" target="_blank">
+      <img src="versa/Memory8.jpeg" alt="Our Memory 2">
+    </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  Made with all my love. <span style="color:var(--accent)">Happy 8th Anniversary ❤️</span>
+</footer>
+
+<script>
+// Personalize the name if you like:
+document.getElementById('name').textContent = 'My Love'; // e.g., 'Arun', 'Rahul', etc.
+
+// Reveal logic
+const cards = [...document.querySelectorAll('.card')];
+cards.forEach((card) => {
+  const p = card.querySelector('.reason');
+  const finalText = p.dataset.reason;
+  card.addEventListener('click', () => {
+    if (p.textContent.includes('•')) {
+      p.textContent = finalText;
+      card.querySelector('h3').textContent = '❤️';
+      burstConfetti(16);
+      spawnHeart();
+    }
+  });
+});
+
+document.getElementById('revealAll').addEventListener('click', () => {
+  cards.forEach((card) => {
+    const p = card.querySelector('.reason');
+    p.textContent = p.dataset.reason;
+    card.querySelector('h3').textContent = '❤️';
+  });
+  playSong();
+  burstConfetti(120);
+  for (let i=0;i<12;i++) setTimeout(spawnHeart, i*120);
+});
+
+// Background song (optional)
+function playSong() {
+  const a = document.getElementById('song');
+  if (a && a.paused) { a.volume = 0.7; a.play().catch(()=>{}); }
+}
+
+// Floating hearts
+function spawnHeart() {
+  const heart = document.createElement('div');
+  heart.className = 'heart';
+  const size = 12 + Math.random() * 18;
+  heart.style.width = heart.style.height = size + 'px';
+  heart.style.left = Math.random() * 100 + 'vw';
+  heart.style.bottom = '-20px';
+  heart.style.animationDuration = 4 + Math.random() * 3 + 's';
+  heart.style.opacity = 0.6 + Math.random() * 0.4;
+  document.body.appendChild(heart);
+  setTimeout(()=> heart.remove(), 8000);
+}
+
+// Confetti
+const c = document.getElementById('confetti');
+const ctx = c.getContext('2d');
+let confettiPieces = [];
+
+function resizeCanvas() {
+  c.width = window.innerWidth * devicePixelRatio;
+  c.height = window.innerHeight * devicePixelRatio;
+  ctx.scale(devicePixelRatio, devicePixelRatio);
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+function burstConfetti(amount = 80) {
+  const colors = ['#ff6b9a','#ffd166','#70e1f5','#90ff9e','#c3a6ff'];
+  for (let i=0;i<amount;i++) {
+    confettiPieces.push({
+      x: window.innerWidth/2,
+      y: window.innerHeight/2 - 40,
+      r: 3 + Math.random()*4,
+      color: colors[(Math.random()*colors.length)|0],
+      vx: (Math.random()-0.5)*6,
+      vy: (Math.random()-1.1)*8,
+      a: Math.random()*Math.PI
+    });
+  }
+}
+
+function draw() {
+  ctx.clearRect(0,0,c.width/devicePixelRatio,c.height/devicePixelRatio);
+  confettiPieces.forEach(p => {
+    p.x += p.vx; p.y += p.vy; p.vy += 0.12; p.a += 0.1;
+    ctx.save();
+    ctx.translate(p.x, p.y);
+    ctx.rotate(p.a);
+    ctx.fillStyle = p.color;
+    ctx.fillRect(-p.r, -p.r, p.r*2, p.r*2);
+    ctx.restore();
+  });
+  confettiPieces = confettiPieces.filter(p => p.y < window.innerHeight + 40);
+  requestAnimationFrame(draw);
+}
+draw();
+
+// Optional: Auto-confetti on load
+setTimeout(()=> burstConfetti(80), 600);
+</script>
+</body>
+</html>
